@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header_info-block">
+            <span>Moves</span>
+            <span id="moves-number">0</span>
+        </div>
+        <div class="header_info-block">
+            <span>Score</span>
+            <span id="score-number">0</span>
+        </div>
+        <div class="header_info-block header_cells">
+            <button class="btn" id="remove-cell-button">-</button>
+            <span id="cells-number">4</span>
+            <button class="btn" id="add-cell-button">+</button>
+        </div>
+        <button class="btn header_restart btn__restart">New</button>
+    </header>
+    <section class="board">        
+        <!-- <div class="board_item-place"></div> -->
+        <!-- <div class="board_item board_item__2">2</div>
+        <div class="board_item board_item__4">4</div>
+        <div class="board_item board_item__8">8</div>
+        <div class="board_item board_item__16">16</div>
+        <div class="board_item board_item__32">32</div>
+        <div class="board_item board_item__64">64</div>
+        <div class="board_item board_item__128">128</div>
+        <div class="board_item board_item__256">256</div>
+        <div class="board_item board_item__512">512</div>
+        <div class="board_item board_item__1024">1024</div>
+        <div class="board_item board_item__2048">2048</div>
+        <div class="board_item board_item__2049">2049</div> -->
+    </section>
+    <dialog class="dialog" id="gameover-dialog">
+        <div class="dialog_gameover">
+            Gameover
+            <button class="dialog_restart btn btn__restart">Restart</button>
+        </div>
+    </dialog>
+
+    <script type="module" src="js/game.js"></script>
+</body>
+
+</html>
