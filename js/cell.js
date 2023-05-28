@@ -1,10 +1,14 @@
+import { Config } from "./config.js";
+
 export class Cell {
-    constructor (board, blockSize, value = 2) {
+    constructor (board, blockSize, boardSize, value = 2) {
         this.size = blockSize;
         this.value = value;
         this.isUnit = false;
         this.isNew = true;
         this.DOM = undefined;
+        this.config = new Config();
+        this.boardSize = boardSize;
         if(this.value !== 0){
             this.DOM = this.createTemplate(value);
             board.appendChild(this.DOM)
@@ -27,8 +31,16 @@ export class Cell {
 
     drow (x, y, gap) {
         this.DOM.style.transform = `translate(${gap * (x + 1) + this.size * x}px , ${gap * (y + 1) + this.size * y}px)`;
+        let shorthand = this.value + '';
+        if ( this.value > 1000000){
+            shorthand = Math.floor(this.value / 1000000) + 'M'; 
+        }
+        else if ( this.value > 4000){
+            shorthand = Math.floor(this.value / 1000) + 'K'; 
+        }
+        this.DOM.innerHTML = shorthand;
+        this.DOM.style.fontSize = this.config.FONTS[this.boardSize][shorthand.length - 1];
         this.DOM.className = `board_item board_item__${this.value}`;
-        this.DOM.innerHTML = this.value;
 
         if(this.isNew){
             this.addAnimation();

@@ -16,7 +16,7 @@ export class GameController {
         for(let y = 0; y < this.config.size; y++){
             this.cells.push([])
             for(let x = 0; x < this.config.size; x++){
-                let newCell = new Cell(this.board, this.config.getBlockSize(), 0);
+                let newCell = new Cell(this.board, this.config.getBlockSize(), this.config.size, 0);
                 this.cells[y].push(newCell);
             }
         }
@@ -34,7 +34,7 @@ export class GameController {
         let randomIndex = Math.floor(Math.random() * freePositions.length);
         let x = freePositions[randomIndex][0];
         let y = freePositions[randomIndex][1];
-        let newCell = new Cell(this.board, this.config.getBlockSize());
+        let newCell = new Cell(this.board, this.config.getBlockSize(), this.config.size);
         this.cells[y][x] = newCell;
     }
 
