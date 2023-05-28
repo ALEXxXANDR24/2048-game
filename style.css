@@ -10,10 +10,7 @@
   --color-512: #b2f7de;
   --color-1024: #bef3b7;
   --color-2048: #7a7a7a;
-  --color-2049: #7a7a7a;
-  --font-2: 2.7rem;
-  --font-3: 2.3rem;
-  --font-4: 1.7rem;
+  --color-default: #454545;
 }
 
 * {
@@ -61,35 +58,6 @@ header {
 }
 .dialog_restart {
   margin-top: 15px;
-}
-.scorelist {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.scorelist_title {
-  font-size: 1.5rem;
-  /* text-transform: uppercase; */
-}
-.scorelist_list {
-  list-style: none;
-  margin-top: 10px;
-}
-.scorelist_item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-width: 400px;
-  padding: 3px 8px;
-  border-radius: 10px;
-}
-.scorelist_item:nth-child(2n + 1) {
-  background-color: #19bded;
-  color: #ffffff;
-}
-.scorelist_item:first-child .scorelist_name,
-.scorelist_item:first-child .scorelist_score {
-  font-size: 1.5rem;
 }
 .btn_close {
   margin-top: 20px;
@@ -160,7 +128,7 @@ header {
   border-radius: 10px;
   position: absolute;
   color: #ffffff;
-  font-size: 3rem;
+  font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,6 +141,8 @@ header {
   -webkit-user-select: none;
   user-select: none;
   z-index: 2;
+
+  background-color: var(--color-default);
 }
 .board_item__hidden {
   z-index: 1;
@@ -189,37 +159,25 @@ header {
 }
 .board_item__16 {
   background-color: var(--color-16);
-  font-size: var(--font-2);
 }
 .board_item__32 {
   background-color: var(--color-32);
-  font-size: var(--font-2);
 }
 .board_item__64 {
   background-color: var(--color-64);
-  font-size: var(--font-2);
 }
 .board_item__128 {
   background-color: var(--color-128);
-  font-size: var(--font-3);
 }
 .board_item__256 {
   background-color: var(--color-256);
-  font-size: var(--font-3);
 }
 .board_item__512 {
   background-color: var(--color-512);
-  font-size: var(--font-3);
 }
 .board_item__1024 {
   background-color: var(--color-1024);
-  font-size: var(--font-4);
 }
 .board_item__2048 {
   background-color: var(--color-2048);
-  font-size: var(--font-4);
-}
-.board_item__2049 {
-  background-color: var(--color-2049);
-  font-size: var(--font-4);
 }
